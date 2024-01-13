@@ -7,6 +7,7 @@ import Home from "./components/Home";
 import Category from "./components/Category";
 import Profile from "./components/Profile";
 import Employee from "./components/Employee";
+import AddCategory from "./components/AddCategory";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="employee" element={<Employee />} />
           <Route path="category" element={<Category />} />
           <Route path="profile" element={<Profile />} />
+          <Route path="add_category" element={<AddCategory />} />
         </Route>
       </Routes>
     </BrowserRouter>

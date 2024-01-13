@@ -11,7 +11,7 @@ router.post('/adminlogin', (req, res) => {
         if (err) return res.json({ loginStatus: false, Error: "Query error" })
         if (result.length > 0) {
             const email = result[0].email;
-            const token = jwt.sign({ role: "admin", email: email }, "jwt_secret_key", { expiresIn: '1d' }) 
+            const token = jwt.sign({ role: "admin", email: email }, "jwt_secret_key", { expiresIn: '1d' })
             res.cookie('token', token)
             return res.json({ loginStatus: true })
         } else {
@@ -20,4 +20,20 @@ router.post('/adminlogin', (req, res) => {
     })
 })
 
+router.get('/category', (req, res) => {
+    const sql = "SELECT * FROM category";
+    con.query(sql, (err, result) => {
+        if (err) return res.json({ Status: false, Error: "Query Error" });
+        return res.json({ Status: true, Result : result });
+    })
+})
+
+
+router.post('/add_category', (req, res) => {
+    const sql = "INSERT INTO category (`name`) VALUES (?)";
+    con.query(sql, [req.body.category], (err, result) => {
+        if (err) return res.json({ Status: false, Error: "Query Error" });
+        return res.json({ Status: true });
+    });
+});
 export { router as AdminRouter }

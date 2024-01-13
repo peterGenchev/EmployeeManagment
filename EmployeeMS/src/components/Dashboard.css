@@ -1,4 +1,12 @@
 .nav-link {
-    font-size: 1.5rem; /* Adjust the font size as needed */
-    color: white;     /* Set the text color to white */
-  }
+  font-size: 1.5rem;
+  color: white;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  background-color: rgb(111, 110, 110);
+  color: black;
+}
+
