@@ -1,0 +1,12 @@
+/* Dashboard.css */
+
+.nav-link {
+  font-size: 1.5rem; /* Adjust the font size as needed */
+  color: white;     /* Set the default text color to white */
+  transition: background-color 0.3s, color 0.3s; /* Add smooth transitions */
+}
+
+.nav-link:hover {
+  background-color: white; /* Set the background color on hover to white */
+  color: black;           /* Set the text color on hover to black */
+}
